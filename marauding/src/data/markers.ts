@@ -6,110 +6,98 @@ export const markersData: FeatureCollection = {
     {
       "type": "Feature",
       "properties": {
-        "name": "Central Park",
-        "description": "A peaceful park perfect for relaxing and enjoying nature",
-        "type": "ChillSpot"
+        "name": "TU Teich",
+        "description": "Perfekt zum chillen zwischen den Vorlesungen",
+        "type": "ChillSpot",
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [9.969367, 53.460606]
+        "coordinates": [9.968997, 53.460296]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "University Library",
-        "description": "Quiet study environment with excellent resources",
-        "type": "StudySpot"
+        "name": "TUB",
+        "description": "Library with group rooms and solo seats to study",
+        "type": "StudySpot",
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [9.970000, 53.461000]
+        "coordinates": [9.96935, 53.46097]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Café Central",
-        "description": "Cozy café with great coffee and light meals",
-        "type": "Food"
+        "name": "Café insgrüne",
+        "description": "ASTA Cafe, nice seats outside",
+        "type": "Food",
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [9.968000, 53.459000]
+        "coordinates": [9.97007, 53.45945]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Riverside Walk",
-        "description": "Scenic walking path along the river, perfect for unwinding",
-        "type": "ChillSpot"
+        "name": "Gebäude Q",
+        "description": "Dedicated study space with small group work areas",
+        "type": "StudySpot",
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [9.971000, 53.462000]
+        "coordinates": [9.97089, 53.46002]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Study Hall",
-        "description": "Dedicated study space with group work areas",
-        "type": "StudySpot"
+        "name": "Aquarien",
+        "description": "Small group rooms on the first floor of building A",
+        "type": "StudySpot",
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [9.967000, 53.458000]
+        "coordinates": [9.96965, 53.46355]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Pizza Corner",
-        "description": "Authentic Italian pizza and pasta dishes",
-        "type": "Food"
+        "name": "Café ZessP",
+        "description": "ASTA managed Cafe, warm foods",
+        "type": "Food",
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [9.972000, 53.463000]
+        "coordinates": [9.97062, 53.46306]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Zen Garden",
-        "description": "Meditation space with beautiful landscaping",
-        "type": "ChillSpot"
+        "name": "Mensa & Pizza Store",
+        "description": "MENSA Warm foods/salad bar as well as pizza slices",
+        "type": "Food",
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [9.966000, 53.457000]
+        "coordinates": [9.96980, 53.46080]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Computer Lab",
-        "description": "High-tech study environment with modern equipment",
-        "type": "StudySpot"
+        "name": "H Rooms",
+        "description": "Often unused Seminar rooms",
+        "type": "StudySpot",
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [9.973000, 53.464000]
+        "coordinates": [9.96965, 53.46355]
       }
     },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Street Food Market",
-        "description": "Diverse food vendors with local and international cuisine",
-        "type": "Food"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [9.965000, 53.456000]
-      }
-    }
-  ]
+    ]
 };

@@ -13,6 +13,7 @@ import styles from "./page.module.css";
 export default function MapPage() {
 
     const [selectedMarker, setSelectedMarker] = useState<{name: string, description: string, coordinates: [number, number]} | null>(null)
+    const [isFilterOpen, setIsFilterOpen] = useState(false)
     
     const [filters, setFilters] = useState<FilterType>({
         ChillSpot: true,
@@ -42,10 +43,16 @@ export default function MapPage() {
     <div className={styles.container}>
       <header className={styles.header}>
         <Link href="/">
-          <Button variant="outline" size="sm">
+          <Button variant="outline">
             ← Mischief managed.
           </Button>
         </Link>
+        <button 
+          className={styles.mobileFilterButton}
+          onClick={() => setIsFilterOpen(!isFilterOpen)}
+        >
+          🗺️ Filters
+        </button>
       </header>
       
       <main className={styles.main}>
@@ -55,12 +62,33 @@ export default function MapPage() {
             onFilterChange={setFilters} 
           />
         </div>
+        
+        {isFilterOpen && (
+          <div className={styles.mobileFilterOverlay} onClick={() => setIsFilterOpen(false)}>
+            <div className={styles.mobileFilterPopout} onClick={(e) => e.stopPropagation()}>
+              <div className={styles.mobileFilterHeader}>
+                <h3>Filter Locations</h3>
+                <button 
+                  className={styles.closeFilterButton}
+                  onClick={() => setIsFilterOpen(false)}
+                >
+                  ×
+                </button>
+              </div>
+              <LocationFilter 
+                filters={filters} 
+                onFilterChange={setFilters} 
+              />
+            </div>
+          </div>
+        )}
+        
         <div className={styles.content}>
              <Map
                  {...viewState}
                  onMove={(evt: { viewState: { longitude: number; latitude: number; zoom: number; pitch: number; } }) => setViewState(evt.viewState)}
-                 style={{width: 1000, height: 700}}
-                 mapStyle="https://tiles.openfreemap.org/styles/liberty"
+                 style={{width: '100%', height: '100%', minHeight: '500px'}}
+                 mapStyle="https://api.maptiler.com/maps/019a083a-38b3-7358-8093-dd0d3c313965/style.json?key=A1331gpmPdbgWzYxhU7E"
              >
                  {filteredMarkers.map((feature, index) => {
                      const [longitude, latitude] = (feature.geometry as any).coordinates;
@@ -84,7 +112,7 @@ export default function MapPage() {
                                  })}
                              />
                          </Marker>
-                     );
+                     )
                  })}
                  
                  {selectedMarker && (
@@ -105,9 +133,14 @@ export default function MapPage() {
                              </button>
                              <h3 className={styles.popupTitle}>📍 {selectedMarker.name}</h3>
                              <p className={styles.popupDescription}>{selectedMarker.description}</p>
-                             <p className={styles.popupCoordinates}>
-                                 Coordinates: {selectedMarker.coordinates[1]}, {selectedMarker.coordinates[0]}
-                             </p>
+                             <a 
+                                 href={`https://www.google.com/maps?q=${selectedMarker.coordinates[1]},${selectedMarker.coordinates[0]}`}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className={styles.popupLink}
+                             >
+                                 🗺️ View on Google Maps
+                             </a>
                          </div>
                      </Popup>
                  )}
@@ -115,5 +148,5 @@ export default function MapPage() {
         </div>
       </main>
     </div>
-  );
+  )
 }

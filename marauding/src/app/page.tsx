@@ -8,7 +8,7 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.content}>
-          <h1> The marauders map </h1>
+          <h1> The marauders map</h1>
             <div className={styles.buttonGroup}>
               <Link href="/map">
                 <Button variant="primary" size="lg">
@@ -19,6 +19,20 @@ export default function Home() {
         </div>
       </main>
       <footer className={styles.footer}>
+      <a
+          href="https://forms.gle/69DURVxw65qthZjm6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/file.svg"
+            alt="Globe icon"
+            width={16}
+            height={16}
+          />
+          Submit places
+        </a>
         <a
           href="https://dettki.net"
           target="_blank"
