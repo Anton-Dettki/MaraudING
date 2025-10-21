@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@vis.gl/react-maplibre": "^8.1.0",
+    "maplibre-gl": "^5.9.0"
+  }
+}

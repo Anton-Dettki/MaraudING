@@ -1,0 +1,55 @@
+.container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.header {
+  background-color: white;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header h1 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.main {
+  padding: 2rem;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.mapPlaceholder {
+  background-color: white;
+  border-radius: 8px;
+  border: 2px dashed #ccc;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.mapContent {
+  color: #999;
+  font-size: 1.2rem;
+  text-align: center;
+}
