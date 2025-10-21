@@ -2,17 +2,23 @@
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 import Link from "next/link";
-import { SetStateAction, useState } from "react";
-import { Button } from "@/components/Button";
-import {Map, Source, Layer, Marker, Popup} from '@vis.gl/react-maplibre';
-import type CircleLayer from '@vis.gl/react-maplibre';
-import type {FeatureCollection} from 'geojson';
+import { useState, useMemo } from "react";
+import { Button, LocationFilter } from "@/components";
+import {Map, Marker, Popup} from '@vis.gl/react-maplibre';
 import { markersData } from '@/data/markers';
+import { LocationFilter as FilterType, LocationType } from '@/types';
+import { MARKER_COLORS } from '@/constants/colors';
 import styles from "./page.module.css";
 
 export default function MapPage() {
 
     const [selectedMarker, setSelectedMarker] = useState<{name: string, description: string, coordinates: [number, number]} | null>(null)
+    
+    const [filters, setFilters] = useState<FilterType>({
+        ChillSpot: true,
+        StudySpot: true,
+        Food: true
+    })
 
     const [viewState, setViewState] = useState({
         longitude: 9.969367,
@@ -20,6 +26,17 @@ export default function MapPage() {
         zoom: 16,
         pitch: 40
     })
+
+    const filteredMarkers = useMemo(() => {
+        return markersData.features.filter(feature => {
+            const markerType = feature.properties?.type as LocationType;
+            return filters[markerType];
+        });
+    }, [filters]);
+
+    const getMarkerColor = (type: LocationType) => {
+        return MARKER_COLORS[type] || MARKER_COLORS.default;
+    };
 
   return (
     <div className={styles.container}>
@@ -32,20 +49,27 @@ export default function MapPage() {
       </header>
       
       <main className={styles.main}>
+        <div className={styles.sidebar}>
+          <LocationFilter 
+            filters={filters} 
+            onFilterChange={setFilters} 
+          />
+        </div>
         <div className={styles.content}>
              <Map
                  {...viewState}
-                 onMove={(evt: { viewState: SetStateAction<{ longitude: number; latitude: number; zoom: number; }>; }) => setViewState(evt.viewState)}
+                 onMove={(evt: { viewState: { longitude: number; latitude: number; zoom: number; pitch: number; } }) => setViewState(evt.viewState)}
                  style={{width: 1000, height: 700}}
                  mapStyle="https://tiles.openfreemap.org/styles/liberty"
              >
-                 {markersData.features.map((feature, index) => {
+                 {filteredMarkers.map((feature, index) => {
                      const [longitude, latitude] = (feature.geometry as any).coordinates;
+                     const markerType = feature.properties?.type as LocationType;
                      return (
                          <Marker key={index} longitude={longitude} latitude={latitude}>
                              <div 
                                  style={{
-                                     backgroundColor: '#0070f3',
+                                     backgroundColor: getMarkerColor(markerType),
                                      width: 20,
                                      height: 20,
                                      borderRadius: '50%',
@@ -68,13 +92,22 @@ export default function MapPage() {
                          longitude={selectedMarker.coordinates[0]} 
                          latitude={selectedMarker.coordinates[1]}
                          onClose={() => setSelectedMarker(null)}
-                         closeButton={true}
+                         closeButton={false}
                          closeOnClick={false}
                      >
-                         <div style={{ padding: '10px' }}>
-                             <h3>📍 {selectedMarker.name}</h3>
-                             <p>{selectedMarker.description}</p>
-                             <p>Coordinates: {selectedMarker.coordinates[1]}, {selectedMarker.coordinates[0]}</p>
+                         <div className={styles.popupContent}>
+                             <button 
+                                 className={styles.closeButton}
+                                 onClick={() => setSelectedMarker(null)}
+                                 aria-label="Close popup"
+                             >
+                                 ×
+                             </button>
+                             <h3 className={styles.popupTitle}>📍 {selectedMarker.name}</h3>
+                             <p className={styles.popupDescription}>{selectedMarker.description}</p>
+                             <p className={styles.popupCoordinates}>
+                                 Coordinates: {selectedMarker.coordinates[1]}, {selectedMarker.coordinates[0]}
+                             </p>
                          </div>
                      </Popup>
                  )}
