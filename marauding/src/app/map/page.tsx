@@ -91,7 +91,7 @@ export default function MapPage() {
                  mapStyle="https://api.maptiler.com/maps/019a083a-38b3-7358-8093-dd0d3c313965/style.json?key=A1331gpmPdbgWzYxhU7E"
              >
                  {filteredMarkers.map((feature, index) => {
-                     const [longitude, latitude] = (feature.geometry as any).coordinates;
+                     const [longitude, latitude] = (feature.geometry as GeoJSON.Point).coordinates;
                      const markerType = feature.properties?.type as LocationType;
                      return (
                          <Marker key={index} longitude={longitude} latitude={latitude}>
