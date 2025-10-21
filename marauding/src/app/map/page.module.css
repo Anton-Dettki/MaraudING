@@ -68,15 +68,14 @@
 }
 
 .popupContent {
-  position: relative;
   padding: 16px;
   min-width: 200px;
   max-width: 300px;
   background: var(--background);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border: 1px solid var(--border);
 }
+
 
 .closeButton {
   position: absolute;

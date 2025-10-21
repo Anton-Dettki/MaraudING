@@ -66,3 +66,13 @@ a {
     color-scheme: dark;
   }
 }
+
+/* Override MapLibre GL default popup styles */
+.maplibregl-popup-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
+}

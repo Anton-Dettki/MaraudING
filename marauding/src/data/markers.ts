@@ -31,7 +31,7 @@ export const markersData: FeatureCollection = {
       "type": "Feature",
       "properties": {
         "name": "Café insgrüne",
-        "description": "ASTA Cafe, nice seats outside",
+        "description": "STW Cafe, nice seats outside",
         "type": "Food",
       },
       "geometry": {
@@ -67,7 +67,7 @@ export const markersData: FeatureCollection = {
       "type": "Feature",
       "properties": {
         "name": "Café ZessP",
-        "description": "ASTA managed Cafe, warm foods",
+        "description": "STW managed Cafe, warm foods",
         "type": "Food",
       },
       "geometry": {
@@ -96,7 +96,127 @@ export const markersData: FeatureCollection = {
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [9.96965, 53.46355]
+        "coordinates": [9.96990, 53.46216]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Stecher Döner",
+        "description": "Decent Döner but someone got stabbed there once",
+        "type": "Food",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.96416, 53.46475]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sofa Cafe",
+        "description": "Relaxed cafe with sofas. They might reheat your food if you ask nicely",
+        "type": "Food",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.97025, 53.46324]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hochschulsport Gym",
+        "description": "Its a gym, not like anyone at the TUHH would ever go there",
+        "type": "ChillSpot",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.96935, 53.46252]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "No name cafe",
+        "description": "Seats inside the building i guess",
+        "type": "Food",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.96935, 53.46256]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "FSR Offices",
+        "description": "The sell cheap beer and other drinks",
+        "type": "Food",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.96858, 53.46304]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Köz Firat",
+        "description": "Döner for 7€",
+        "type": "Food",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.97827, 53.46130]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Edeka Niemerszein",
+        "description": "The have decent baked goods",
+        "type": "Food",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.97963, 53.46125]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Technikum",
+        "description": "Group tables to sit together",
+        "type": "ChillSpot",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.97036, 53.45955]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Uni Kiosk",
+        "description": "Chill kiosk with coffee and snacks",
+        "type": "Food",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.97073, 53.45909]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shitty Edeka",
+        "description": "Super small and card only with a 5€ purchase",
+        "type": "Food",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.96624, 53.45805]
       }
     },
     ]
