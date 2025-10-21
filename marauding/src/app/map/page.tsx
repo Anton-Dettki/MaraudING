@@ -44,7 +44,7 @@ export default function MapPage() {
       <header className={styles.header}>
         <Link href="/">
           <Button variant="outline">
-            ← Mischief managed.
+            ← Mischief managed
           </Button>
         </Link>
         <button 

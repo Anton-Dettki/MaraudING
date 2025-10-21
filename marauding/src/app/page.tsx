@@ -9,10 +9,11 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.content}>
           <h1> The marauders map</h1>
+          <span className={styles.subtitle}> To help you find places around campus that you didnt know existed</span>
             <div className={styles.buttonGroup}>
               <Link href="/map">
                 <Button variant="primary" size="lg">
-                  I solemnly swear that I am up to no good.
+                  I solemnly swear that I am up to no good
                 </Button>
               </Link>
             </div>
