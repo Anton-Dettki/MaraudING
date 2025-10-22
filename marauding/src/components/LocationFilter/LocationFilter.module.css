@@ -38,8 +38,20 @@
   margin-right: 8px;
   width: 16px;
   height: 16px;
-  accent-color: var(--primary);
   cursor: pointer;
+}
+
+/* Color-coded checkboxes based on filter type */
+.checkbox[data-filter-type="ChillSpot"] {
+  accent-color: #06d6a0;
+}
+
+.checkbox[data-filter-type="StudySpot"] {
+  accent-color: #ef476f;
+}
+
+.checkbox[data-filter-type="Food"] {
+  accent-color: #f59e0b;
 }
 
 .label {

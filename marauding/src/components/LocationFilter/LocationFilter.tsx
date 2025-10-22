@@ -27,6 +27,7 @@ export const LocationFilter: React.FC<LocationFilterProps> = ({ filters, onFilte
               checked={filters[type as keyof FilterType]}
               onChange={() => handleFilterChange(type as keyof FilterType)}
               className={styles.checkbox}
+              data-filter-type={type}
             />
             <span className={styles.label}>
               {config.icon} {config.label}

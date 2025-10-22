@@ -1,6 +1,6 @@
 export const MARKER_COLORS = {
-  ChillSpot: '#10b981', // Green
-  StudySpot: '#3b82f6', // Blue
+  ChillSpot: '#06d6a0', // Green
+  StudySpot: '#ef476f', // Blue
   Food: '#f59e0b',      // Orange
   default: '#6b7280'    // Gray
 } as const;
