@@ -35,6 +35,20 @@ export default function Home() {
           Submit places
         </a>
         <a
+          href="https://github.com/Anton-Dettki/MaraudING"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/github-mark-white.svg"
+            alt="Github icon"
+            width={16}
+            height={16}
+          />
+          View on Github
+        </a>
+        <a
           href="https://dettki.net"
           target="_blank"
           rel="noopener noreferrer"
